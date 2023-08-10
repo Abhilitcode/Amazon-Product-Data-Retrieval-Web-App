@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrapit!</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="image"></div>
+    <div class="container">
+    <div class="index_text">
+    <form method="POST">
+        <hr>
+    
+        <h1>Scrapeit!</h1>
+    
+        <div>
+        <h3>Enter the name for any product for which data needs to be scrapped</h3>
+        </div>
+    
+        <hr>
+        <p align=center></p>
+            <div class="form-group">
+                <input type="text" name="prod_name" class="form-control" placeholder="Scrape" required>
+            </div>
+        <button class="btn btn-primary" type="Submit">Go</button>
+        </div>
+        </div>
+    </form>
+
+</body>
+</html>

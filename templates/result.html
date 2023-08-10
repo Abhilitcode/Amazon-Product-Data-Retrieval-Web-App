@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrapit!</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container">
+        <div class="result_text">
+            <h1>Scrapeit!</h1>
+            <!-- <div class="warning">
+                <h3>WARNING: Due to some issue with the scraping software utilized in this web-application, the flipkart images will not be rendered. </h3>
+            </div> -->
+            <hr>
+        </div>
+    </div>  
+
+
+    <div align="center">
+
+        <br>
+        <br>
+        <div class="tables">
+        <div class="white">
+        <h2>PRODUCT DATA</h2>
+        </div>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Price(₹)</th>
+                    <th>No. of stars</th>
+                    <th>Shipping Date</th>
+                    <th>Number or ratings</th>
+                    <th> </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in final_products_list %}
+                <tr>
+                    <td><img src="{{product['image']}}" class="img-rounded" alt="Product Image"></td>
+                    <td>{{ product['title'] }}</td>
+                    <td>{{ product['price'] }}</td>
+                    <td>{{ product['stars'] }}</td>
+                    <td>{{ product['date'] }}</td>
+                    <td>{{ product['ratings'] }}</td>
+                    <td><button class="btn btn-primary" onclick="window.location.href='{{product['links']}}';">Buy Now</button></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            
+            
+
+        </table>
+
+        <br>
+        <br>
+
+</body>
+</html>
